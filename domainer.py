@@ -87,16 +87,20 @@ if __name__ == "__main__":
     not_reg = green + "is not registred" + reset
    
     for domain in domains:
-      print(yellow + domain + reset, reg if is_registered(domain) else not_reg)
-
-
-    
-
-time.sleep(4)
-print("Wait....")
+        time.sleep(0)
+        if is_registered(domain) == True:
+            print(domain, reg)
+        else:
+            print(domain, not_reg)
+            with open("domains.txt", "a") as results:
+                results.write(domain)
+                results.write('\n')
 
 time.sleep(2)
-print("Finishing the process!")
+print("\n" + "Finishing the process!")
 
-time.sleep(3)             
-print ("The script took {0} seconds !".format(time.time() - start_time))
+time.sleep(2)
+print ("\n"+ Fore.GREEN+"Articles generated in {0} seconds!".format(time.time() - start_time)+Fore.RESET)
+
+time.sleep(4)
+print("\n" + "Cya!" + "\n")        
