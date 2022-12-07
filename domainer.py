@@ -89,9 +89,9 @@ if __name__ == "__main__":
     for domain in domains:
         time.sleep(0)
         if is_registered(domain) == True:
-            print(domain, reg)
+            print("+", domain, reg)
         else:
-            print(domain, not_reg)
+            print("+", domain, not_reg)
             with open("domains.txt", "a") as results:
                 results.write(domain)
                 results.write('\n')
@@ -100,7 +100,10 @@ time.sleep(2)
 print("\n" + "Finishing the process!")
 
 time.sleep(2)
-print ("\n"+ Fore.GREEN+"Articles generated in {0} seconds!".format(time.time() - start_time)+Fore.RESET)
+print("\n" + "All available domains have been saved to txt file!")
+
+time.sleep(2)
+print ("\n"+ Fore.GREEN+"Domains generated in {0} seconds!".format(time.time() - start_time)+Fore.RESET)
 
 time.sleep(4)
 print("\n" + "Cya!" + "\n")        
