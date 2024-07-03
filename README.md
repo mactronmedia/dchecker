@@ -1,3 +1,3 @@
 ## Dchecker
 
-Messy domain finder in Python...
+A messy domain checker in finder written in Python.
